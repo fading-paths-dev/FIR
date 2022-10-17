@@ -17,7 +17,6 @@ static void pushFilterElementsInt (int32_t data);
 static void pushFilterElementsFloat(float data);
 
 
-
 int32_t calculateFilterOutputInt (int32_t input)
 {
     float sum = 0;
@@ -72,4 +71,20 @@ static void pushFilterElementsFloat(float data)
         filter_array_float[i] = filter_array_float[i - 1];
     }
     filter_array_float[0] = data;
+}
+
+void runThroughAllSamplesInt(void)
+{
+    for (uint8_t i = 0; i < SAMPLES; i++)
+    {
+        outputInt[i] = calculateFilterOutputInt(inputInt[i]);
+    }
+}
+
+void runThroughAllSamplesFloat(void)
+{
+    for (uint8_t i = 0; i < SAMPLES; i++)
+    {
+        outputFloat[i] = calculateFilterOutputFloat(inputFloat[i]);
+    }
 }

@@ -13,6 +13,9 @@
 int32_t calculateFilterOutputInt (int32_t input);
 float calculateFilterOutputFloat (float input);
 
+void runThroughAllSamplesInt(void);
+void runThroughAllSamplesFloat(void);
+
 
 void resetFilter (void);
 
